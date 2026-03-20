@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1st Anniversary</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* SLIDES */
+.slide {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+
+.active {
+    display: flex;
+}
+
+/* SLIDE 1 WITH BACKGROUND IMAGE */
+.slide1 {
+    background: url('anniv.jpeg') no-repeat center center/cover;
+    color: white;
+}
+
+/* DARK OVERLAY */
+.slide1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+}
+
+.slide1 h1, .slide1 p {
+    position: relative;
+    z-index: 1;
+}
+
+/* SLIDE 2 (BOOK STYLE) */
+.slide2 {
+    background: linear-gradient(to right, #d9a7c7, #fffcdc);
+}
+
+/* BOOK DESIGN */
+.book {
+    background: #fffdf7;
+    padding: 30px;
+    max-width: 700px;
+    height: 80vh;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.3),
+        inset 0 0 10px rgba(0,0,0,0.1);
+    line-height: 1.6;
+    text-align: left;
+}
+
+.book h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.book p {
+    font-size: 1.1em;
+}
+
+/* SLIDE 3 */
+.slide3 {
+    background: linear-gradient(to right, #f6d365, #fda085);
+}
+
+/* TEXT */
+h1 {
+    font-size: 2.5em;
+}
+
+p {
+    max-width: 600px;
+    font-size: 1.2em;
+}
+
+/* BUTTONS */
+.buttons {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+/* IMAGE SLIDER */
+.slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.slider img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.slide-btn {
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev {
+    left: -40px;
+}
+
+.next {
+    right: -40px;
+}
+
+.slide-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide slide1 active">
+    <h1>Happy 1st Anniversary bal ❤️</h1>
+    <p>
+        One year of love, memories, beautiful and sometimes sad moments together.
+        I’m so grateful to have you in my life.
+    </p>
+</div>
+
+<!-- SLIDE 2 (BOOK STYLE) -->
+<div class="slide slide2">
+    <div class="book">
+        <h1>message nang pogi mong BF 💌</h1>
+        <p>
+Hi bal...Happy Anniversary! una sa lahat im so happy kasi dumating ka sa buhay ko. and gagawin ko lahat for us. and sa mga dadating pang hamon laban lang. gusto ko lang malaman mo na lahat nang problems and arguments natin is handa ako gawin lahat para lang ma ayos dahil mahal na mahal kita bal. ngayon kolang nadama ang ganto. sobrang gaan nang lahat kapag nasa tabi kita na para bang kaya ko gawin ang imposible haha magic yarn. ahh basta pakiramdam ko kasi kayang kaya ko maging successful nang kasama ka. nang dumating ka sa buhay ko bal naging malinaw ang lahat nang vision ko sa future. successful and happy family kasama ka. lahat nang hamon sa atin lagpasan natin wag natin tambayan. salamat nga pala sa palaging pag intindi saakin bal.sorry din sa mga nagawa ko nitong mga nakaraan. and sana wag kang maubusan at mawalan nang pasensya saakin. andito lang ako bal sasamahan ka sa lahat. i love you bal. and sa mga hardtimes natin mas lalo kitang mamahalin andito lang ako iintindihin ka palagi at aalagaan.I am completely yours. I love you and I don't see an end to that. There's no second option, no backup, no what if. I chose you with everything I have. My heart, my time, my future, all of it.
+
+<br><br>
+Thank you for staying, for loving me, and for being my strength.
+This past year has been one of the best chapters of my life because of you.
+I appreciate every little thing you do, and each day I will love you more and more. mwa mwa ka sakin 
+
+<br><br>
+I look forward to more years with you.
+I love you so much bal ❤️
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide slide3">
+    <h1>Our Memory 📸</h1>
+
+    <div class="slider">
+        <button class="slide-btn prev" onclick="prevImage()">❮</button>
+
+        <img id="sliderImage" src="anniv.jpeg" alt="Our Memory">
+
+        <button class="slide-btn next" onclick="nextImage()">❯</button>
+    </div>
+
+    <p>You and me, forever. ❤️</p>
+</div>
+
+<!-- NAV BUTTONS -->
+<div class="buttons">
+    <button onclick="prevSlide()">Previous</button>
+    <button onclick="nextSlide()">Next</button>
+</div>
+
+<script>
+/* SLIDE NAVIGATION */
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+            slide.classList.add('active');
+        }
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+/* IMAGE SLIDER */
+const images = [
+    "anniv.jpeg",
+    "anniv1.jpeg",
+    "anniv2.jpeg",
+    "anniv3.jpeg",
+    "anniv4.jpeg",
+    "anniv5.jpeg",
+    "anniv6.jpeg",
+    "anniv7.jpg",
+    "anniv8.jpg",
+    "anniv9.jpg"
+];
+
+let currentImage = 0;
+
+function showImage(index) {
+    document.getElementById("sliderImage").src = images[index];
+}
+
+function nextImage() {
+    currentImage = (currentImage + 1) % images.length;
+    showImage(currentImage);
+}
+
+function prevImage() {
+    currentImage = (currentImage - 1 + images.length) % images.length;
+    showImage(currentImage);
+}
+
+/* AUTO SLIDE */
+setInterval(() => {
+    nextImage();
+}, 3000);
+</script>
+
+</body>
+</html>
